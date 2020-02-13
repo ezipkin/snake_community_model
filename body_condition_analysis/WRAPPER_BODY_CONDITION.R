@@ -2,7 +2,7 @@
 rm(list=ls())
 
 #Read in data
-bc<-read.csv("snake_body_condition_data.csv", 
+bc<-read.csv("~/Zipkin_etal_2020_Science/data/snake_body_condition_data.csv", 
              stringsAsFactors = FALSE)
 
 #Generate list of species 
@@ -11,7 +11,8 @@ species.list<-unique(paste(bc$Genus, bc$Species))
 bc$Gs<-paste(bc$Genus, bc$Species)
 
 #Generate body condition metric
-#Mass divided by SVL^2 (converted mm to cm)
+#Mass divided by SVL^2 
+#We standardized SVL by dividing by 10 so that body conditions values were not so close to zero
 bc$condition<-bc$Mass/((bc$SVL/10)^2)
 
 #Omit NAs and make a new data frame bc1

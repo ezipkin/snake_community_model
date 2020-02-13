@@ -1,8 +1,8 @@
-# [Tropical snake diversity collapses after widespread amphibian loss](https://xxx)
+# [Tropical snake diversity collapses after widespread amphibian loss](https://science.sciencemag.org/content/367/6479/814)
 
 ### Elise F. Zipkin, Graziella V. DiRenzo, Julie M. Ray, Sam Rossman & Karen R. Lips
 
-### In press
+### Science
 
 ### Code/Data DOI: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3628038.svg)](https://doi.org/10.5281/zenodo.3628038)
 
@@ -10,7 +10,7 @@
 __________________________________________________________________________________________________________________________________________
 
 ## Abstract:
-Biodiversity is declining at unprecedented rates worldwide. Yet, cascading effects of biodiversity loss on other taxa are largely unknown because baseline data are often unavailable. We document the collapse of a Neotropical snake community after the invasive fungal pathogen Batrachochytrium dendrobatidis caused a chytridiomycosis epizootic leading to the catastrophic loss of amphibians, a food source for snakes. Following mass mortality of amphibians, the snake community contained fewer species and was more homogeneous across the study site with several species in poorer body condition, despite no other systematic changes in the environment. The demise of the snake community after amphibian loss demonstrates the repercussive and often unnoticed consequences of the biodiversity crisis and calls attention to the invisible declines of rare and data deficient species.
+Biodiversity is declining at unprecedented rates worldwide. Yet, cascading effects of biodiversity loss on other taxa are largely unknown because baseline data are often unavailable. We document the collapse of a Neotropical snake community after the invasive fungal pathogen Batrachochytrium dendrobatidis caused a chytridiomycosis epizootic leading to the catastrophic loss of amphibians, a food source for snakes. After mass mortality of amphibians, the snake community contained fewer species and was more homogeneous across the study site with several species in poorer body condition, despite no other systematic changes in the environment. The demise of the snake community after amphibian loss demonstrates the repercussive and often unnoticed consequences of the biodiversity crisis and calls attention to the invisible declines of rare and data-deficient species.
 
 ## Code 
 1. [body_condition_analysis](./body_condition_analysis/): This folder contains the code to run the body condition analyses for the six species with a sufficient number of samples pre- and post-epizootic.
