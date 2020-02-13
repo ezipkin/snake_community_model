@@ -14,11 +14,11 @@ setwd(dirname(model))
 ###############################
 
 # Detection data
-cap<-read.csv("snake_occurrence_data_from_transects.csv", stringsAsFactors = FALSE)
+cap<-read.csv("~/Zipkin_etal_2020_Science/data/snake_occurrence_data_from_transects.csv", stringsAsFactors = FALSE)
 colnames(cap)[1]<-c("Survey_ID")
 
 # Effort data
-eff<-read.csv("transect_survey_effort.csv", stringsAsFactors = FALSE)
+eff<-read.csv("~/Zipkin_etal_2020_Science/data/transect_survey_effort.csv", stringsAsFactors = FALSE)
 colnames(eff)[1]<-c("Survey_ID")
 
 # Format the data for JAGS and create the necessary variables 
@@ -93,6 +93,7 @@ inits <- function(){
 # Parameters to save
 params<-c("u", "u.sigma", "omega", "w", "u.mu", "v.mu", "rho", "p.diff")
 
+
 # Test JAGS run
 ni=10
 nt=1
@@ -106,7 +107,7 @@ jags.out<- jags(data=sp.data, inits=inits, parameters.to.save=params, model.file
 
 # Run the JAGS model to convergence
 # In previous simulation studies the autojags function in jagsUI has been unreliable
-# This may take ca. 3 days
+# This may take many days to run, depending on the machine that you use
 # Add blank "STOP.txt" file to working directory to stop while loop after most recent update (see Line 128)
 counter=0
 while(max(unlist(jags.out$Rhat),na.rm = TRUE)>1.1){
@@ -116,7 +117,7 @@ while(max(unlist(jags.out$Rhat),na.rm = TRUE)>1.1){
     nt=25
     ni=(5000*nt)/nc
   } else{
-    na=0
+    na=NULL
     nt=25
     ni=(5000*nt)/nc
   }
@@ -137,7 +138,7 @@ head(sort(unlist(jags.out$Rhat),decreasing = TRUE))
 ################################################################
 
 # Load output if needed
-# load("OUTPUT_EL_COPE_SNAKE.RData")
+# load("MODEL_OUT.RData")
 
 # Check for model fit using the Bayesian p-value by taking the mean of the p.diff vector of 0 and 1 values
 mean(jags.out$sims.list$p.diff)
@@ -353,4 +354,3 @@ detection<- ggplot() + geom_point(data=p.pre, aes(x=means, y=species), color="do
 detection
 
 # Post-processing of figures in Adobe Photoshop by Dr. Sam Rossman and Mollie Newman.
-
